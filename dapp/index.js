@@ -59,7 +59,7 @@ const getUser = async (_address) => {
   }
 };
 
-//registerUser("Marcio 3", 150, "0xDFC4BA71505C87626C0C486fE5F79D752EdDf29B");
+//registerUser("User Teste", 150, "0xDFC4BA71505C87626C0C486fE5F79D752EdDf29B");
 
 getUser("0x0Acb68Ee9BB4A70bE15f3042d189A8FB491C1DFB");
 getUser("0xDFC4BA71505C87626C0C486fE5F79D752EdDf29B");
