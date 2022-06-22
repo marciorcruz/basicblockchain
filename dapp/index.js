@@ -38,9 +38,8 @@ const tokenInstance = new ethers.Contract(tokenAddress, tokenAbi, wallet);
 //Se o usuário já estiver cadastrado vai retornar erro.
 const registerUser = async (_name, _age, _address) => {
   try {
-    const txResponse = await tokenInstance
-      .registerUser(_name, _age, _address)
-      .wait();
+    const txResponse = await tokenInstance.registerUser(_name, _age, _address);
+    console.log(txResponse);
     return txResponse;
   } catch (e) {
     console.log(e);
@@ -52,6 +51,7 @@ const registerUser = async (_name, _age, _address) => {
 const getUser = async (_address) => {
   try {
     const txResponse = await tokenInstance.getUser(_address);
+    console.log(txResponse);
     return txResponse;
   } catch (e) {
     console.log(e);
@@ -59,14 +59,7 @@ const getUser = async (_address) => {
   }
 };
 
+//registerUser("Marcio 3", 150, "0xDFC4BA71505C87626C0C486fE5F79D752EdDf29B");
 
-const register = await registerUser(
-  "Marcio 2",
-  100,
-  "0x0Acb68Ee9BB4A70bE15f3042d189A8FB491C1DFB"
-);
-console.log(register);
-
-const get = await getUser("0x0Acb68Ee9BB4A70bE15f3042d189A8FB491C1DFB");
-
-console.log(get);
+getUser("0x0Acb68Ee9BB4A70bE15f3042d189A8FB491C1DFB");
+getUser("0xDFC4BA71505C87626C0C486fE5F79D752EdDf29B");
